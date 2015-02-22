@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TEF components demo</title>
+    <meta name="viewport" content="width=device-width">
+    <link id="themeFile" rel="stylesheet" href="css/grid.min.css">
+
+    <style>
+      body {
+        font-family: Helvetica, Arial;
+        font-size: 14px;
+      }
+      header {
+        display: block;
+        overflow: hidden;
+      }
+      header * {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      style {
+        display: block;
+        white-space: pre;
+        margin-left: -80px;
+        line-height: 25px;
+        overflow-x: auto;
+      }
+      [data-columns] li {
+        background: #eee;
+        text-align: center;
+        padding: 20px 0;
+      }
+      [data-columns]:not(.tef-gutter) li {
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+      }
+      [data-columns] + [data-columns] {
+        margin-top: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tef-wrapper">
+      <header>
+        <h1>Responsive grid system</h1>
+      </header>
+
+      <h2>12 columns</h2>
+      <ul data-columns="12" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li>
+      </ul>
+      <code>
+        <style>
+          <ul data-columns="12">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+          </ul>
+        </style>
+      </code>
+
+      <h2>12 columns with gutter</h2>
+      <ul data-columns="12" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li>
+      </ul>
+      <code>
+        <style>
+          <ul data-columns="12" class="tef-gutter">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+          </ul>
+        </style>
+      </code>
+
+      <h2>12 to 1</h2>
+      <ul data-columns="12">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li>
+      </ul>
+      <ul data-columns="11">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>10</li><li>11</li>
+      </ul>
+      <ul data-columns="10">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>10</li>
+      </ul>
+      <ul data-columns="9">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li>
+      </ul>
+      <ul data-columns="8">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li>
+      </ul>
+      <ul data-columns="7">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li>
+      </ul>
+      <ul data-columns="6">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+      </ul>
+      <ul data-columns="5">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+      </ul>
+      <ul data-columns="4">
+        <li>1</li><li>2</li><li>3</li><li>4</li>
+      </ul>
+      <ul data-columns="3">
+        <li>1</li><li>2</li><li>3</li>
+      </ul>
+      <ul data-columns="2">
+        <li>1</li><li>2</li>
+      </ul>
+      <ul data-columns="1">
+        <li>1</li>
+      </ul>
+
+      <h2>12 to 1 with gutter</h2>
+      <ul data-columns="12" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li>
+      </ul>
+      <ul data-columns="11" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>10</li><li>11</li>
+      </ul>
+      <ul data-columns="10" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>10</li>
+      </ul>
+      <ul data-columns="9" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li>
+      </ul>
+      <ul data-columns="8" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li>
+      </ul>
+      <ul data-columns="7" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li>
+      </ul>
+      <ul data-columns="6" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+      </ul>
+      <ul data-columns="5" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>
+      </ul>
+      <ul data-columns="4" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li><li>4</li>
+      </ul>
+      <ul data-columns="3" class="tef-gutter">
+        <li>1</li><li>2</li><li>3</li>
+      </ul>
+      <ul data-columns="2" class="tef-gutter">
+        <li>1</li><li>2</li>
+      </ul>
+      <ul data-columns="1">
+        <li>1</li>
+      </ul>
+
+      <h2>12 columns responsive</h2>
+      <ol>
+        <li>Default -> 12 columns</li>
+        <li>Desktop -> 6 columns</li>
+        <li>Tablet landscape -> 4 columns</li>
+        <li>Tablet portrait / Mobile landscape -> 2 columns</li>
+        <li>Mobile portrait -> 1 column</li>
+      </ol>
+      <ul data-columns="12" data-columns-lg="6" data-columns-md="4" data-columns-sm="2" data-columns-xs="1">
+        <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+        <li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li>
+      </ul>
+      <code>
+        <style>
+          <ul data-columns="12" data-columns-lg="6" data-columns-md="4" data-columns-sm="2" data-columns-xs="1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+          </ul>
+        </style>
+      </code>
+
+    </div>
+  </body>
+</html>

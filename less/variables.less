@@ -1,0 +1,24 @@
+// Grid variables
+@gutter: 1.6%;
+@column-gutter: @gutter / 2;
+
+// breakpoints
+@width-min:   320px;
+@width-xs:    600px;
+@width-sm:    700px;
+@width-md:    850px;
+@width-lg:   1190px;
+@width-xl:   1400px;
+
+// width helpers
+@width-lg-max: @width-lg - 40px;
+@width-xl-max: @width-xl - 40px;
+
+.width(@width) {
+  width: 100% / @width;
+}
+
+.width-gutter(@width) {
+  width: (100% / @width) - @gutter;
+}
+

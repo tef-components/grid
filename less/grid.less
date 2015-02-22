@@ -1,0 +1,91 @@
+// TEF components - grid
+@import 'mixins.less';
+@import 'variables.less';
+@import 'media-queries.less';
+
+body {
+  margin: 0;
+  .media-min-sm({ margin: 0 20px; });
+}
+
+.tef-wrapper {
+  display: block;
+  min-width: @width-min;
+  width: 100%;
+  margin: 0;
+
+  .media-min-lg({
+    margin: 0 auto;
+    width: @width-lg-max;
+  });
+
+  .media-min-xl({
+    width: @width-xl-max;
+  });
+}
+
+[data-columns] {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & > * {
+    float: left;
+    .box-sizing(border-box);
+  }
+
+  &.tef-gutter {
+    margin: @column-gutter -@column-gutter;
+    & > * { margin: @column-gutter; }
+  }
+}
+
+// for loop to define all column widths (w/o guttuer)
+@iterations: 12;
+.for (@i) when (@i > 0) {
+  [data-columns="@{i}"] {
+    & > * { .width(@i) }
+    &.tef-gutter > * { .width-gutter(@i) }
+  }
+
+  .media-max-lg({
+    [data-columns-lg="@{i}"] {
+      & > * { .width(@i) }
+      &.tef-gutter > * { .width-gutter(@i) }
+    }
+  });
+
+  .media-max-md({
+    [data-columns-md="@{i}"] {
+      & > * { .width(@i) }
+      &.tef-gutter > * { .width-gutter(@i) }
+    }
+  });
+
+  .media-max-sm({
+    [data-columns-sm="@{i}"] {
+      & > * { .width(@i) }
+      &.tef-gutter > * { .width-gutter(@i) }
+    }
+  });
+
+  .media-max-xs({
+    [data-columns-xs="@{i}"] {
+      & > * { .width(@i) }
+      &.tef-gutter > * { .width-gutter(@i) }
+    }
+  });
+  .for(@i - 1);
+}
+.for(@iterations);
+
+// Columns behaviour
+//[data-columns][data-columns-sm="2"]{
+//  & > * {
+//    .media-min-sm({
+//      background: red;
+//    });
+//  }
+//}
