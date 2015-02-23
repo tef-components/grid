@@ -22,16 +22,26 @@ module.exports = function(grunt) {
         }
       }
     },
+
     watch: {
       styles: {
-        files: ['less/**/*.less'], // which files to watch
-        tasks: ['less'],
+        files: ['less/**/*.less'],
+        tasks: ['less', 'autoprefixer'],
         options: {
           nospawn: true
         }
       }
-    }
+    },
+
+    autoprefixer: {
+      options: {
+        browsers: ['last 5 versions']
+      },
+      dist: {
+        src: 'css/*.css'
+      },
+    },
   });
 
-  grunt.registerTask('default', ['less', 'watch']);
+  grunt.registerTask('default', ['less','autoprefixer','watch']);
 };
