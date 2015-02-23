@@ -48,6 +48,9 @@ body {
   [data-columns="@{i}"] {
     & > * { .width(@i) }
     &.tef-gutter > * { .width-gutter(@i) }
+
+    & > [data-column-span="2"] { .width(@i/2) }
+    &.tef-gutter > [data-column-span="2"] { .width-gutter(@i/2) }
   }
 
   .media-max-lg({
@@ -81,11 +84,10 @@ body {
 }
 .for(@iterations);
 
-// Columns behaviour
-//[data-columns][data-columns-sm="2"]{
-//  & > * {
-//    .media-min-sm({
-//      background: red;
-//    });
-//  }
-//}
+// hide columns
+[data-columns="0"] { display: none }
+.media-max-lg({ [data-columns-lg="0"] { display: none } });
+.media-max-md({ [data-columns-md="0"] { display: none } });
+.media-max-sm({ [data-columns-sm="0"] { display: none } });
+.media-max-xs({ [data-columns-xs="0"] { display: none } });
+
