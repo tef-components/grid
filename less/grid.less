@@ -1,35 +1,30 @@
+//
 // TEF components - grid
-@import 'mixins.less';
-@import 'variables.less';
-@import 'media-queries.less';
+//
+
+@import "../../utils/less/mixins.less";
 
 body {
   margin: 0;
-  .media-min-sm({ margin: 0 20px; });
+  min-width: @widthMin;
 }
 
 .tef-wrapper {
   display: block;
-  min-width: @width-min;
-  width: 100%;
-  margin: 0;
+  padding: 0 10px;
+  margin: 0 auto;
 
-  .media-min-lg({
-    margin: 0 auto;
-    width: @width-lg-max;
-  });
-
-  .media-min-xl({
-    width: @width-xl-max;
-  });
+  .media-min-sm({ width: @widthMaxSM; });
+  .media-min-md({ width: @widthMaxMD; });
+  .media-min-lg({ width: @widthMaxLG; });
 }
 
 [data-columns] {
   display: block;
-  overflow: hidden;
   margin: 0;
   padding: 0;
   list-style: none;
+  .clearfix();
 
   & > * {
     float: left;
@@ -37,20 +32,24 @@ body {
   }
 
   &.tef-gutter {
-    margin: @column-gutter -@column-gutter;
-    & > * { margin: @column-gutter; }
+    margin: @columnGutter -@columnGutter;
+    & > * { margin: @columnGutter; }
   }
 }
 
-// for loop to define all column widths (w/o guttuer)
-@iterations: 12;
+@columns: 12;
+// for loop to generate all column widths (w/o gutter)
 .for (@i) when (@i > 0) {
   [data-columns="@{i}"] {
     & > * { .width(@i) }
     &.tef-gutter > * { .width-gutter(@i) }
 
-    & > [data-column-span="2"] { .width(@i/2) }
-    &.tef-gutter > [data-column-span="2"] { .width-gutter(@i/2) }
+    .for-span (@j) when (@j > 0) {
+      & > [data-column-span="@{j}"] { .width(@i/@j) }
+      &.tef-gutter > [data-column-span="@{j}"] { .width-gutter(@i/@j) }
+    .for-span(@j - 1);
+    }
+    .for-span(@i - 1);
   }
 
   .media-max-lg({
@@ -82,7 +81,15 @@ body {
   });
   .for(@i - 1);
 }
-.for(@iterations);
+.for(@columns);
+
+.width(@width) {
+  width: 100% / @width;
+}
+
+.width-gutter(@width) {
+  width: (100% / @width) - @gutter;
+}
 
 // hide columns
 [data-columns="0"] { display: none }
@@ -90,4 +97,3 @@ body {
 .media-max-md({ [data-columns-md="0"] { display: none } });
 .media-max-sm({ [data-columns-sm="0"] { display: none } });
 .media-max-xs({ [data-columns-xs="0"] { display: none } });
-

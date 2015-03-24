@@ -2,46 +2,60 @@ module.exports = function(grunt) {
   require('jit-grunt')(grunt);
 
   grunt.initConfig({
-    less: {
-      development: {
-        options: {
-          optimization: 2
-        },
-        files: {
-          'css/grid.css': 'less/grid.less'
-        }
+    bump: {
+      // upgrade release and push to master
+      options : {
+        files: ['bower.json'],
+        commitFiles: ["-a"],
+        pushTo: 'origin'
+      }
+    },
+
+    exec: {
+      // add new files before commiting
+      add: {
+        command: 'git add -A'
       },
-      production: {
-        options: {
-          compress: true,
-          yuicompress: true,
-          optimization: 2
-        },
-        files: {
-          'css/grid.min.css': 'less/grid.less'
+
+      // push to gh-pages branch
+      pages: {
+        command: [
+          'git checkout gh-pages',
+          'git pull origin master',
+          'git push origin gh-pages',
+          'git checkout master'
+        ].join('&&')
+      },
+
+      // adds prompted commit message
+      message: {
+        command: function() {
+          var message = grunt.config('gitmessage');
+          return "git commit -am '" + message + "'";
         }
       }
     },
 
-    watch: {
-      styles: {
-        files: ['less/**/*.less'],
-        tasks: ['less', 'autoprefixer'],
+    prompt: {
+      commit: {
         options: {
-          nospawn: true
+          questions: [
+            {
+              config: 'gitmessage',
+              type: 'input',
+              message: 'Commit Message'
+            }
+          ]
         }
       }
-    },
-
-    autoprefixer: {
-      options: {
-        browsers: ['last 5 versions']
-      },
-      dist: {
-        src: 'css/*.css'
-      },
-    },
+    }
   });
 
-  grunt.registerTask('default', ['less','autoprefixer','watch']);
+  grunt.registerTask('release', [
+    'exec:add',
+    'prompt',
+    'exec:message',
+    'bump',
+    'exec:pages'
+  ]);
 };
