@@ -42,17 +42,55 @@ body {
 // for loop to generate all column widths (w/o gutter)
 .for (@i) when (@i > 0) {
   [data-columns="@{i}"] {
-    & > * { .width(@i) }
+    & > * { .width(@i); }
     .for-span (@j) when (@j > 0) {
-      & > [data-column-span="@{j}"] { .width(@i/@j) }
-    .for-span(@j - 1);
+      & > [data-column-span="@{j}"] { .width(@i/@j); }
+      .for-span(@j - 1);
     }
     .for-span(@i - 1);
   }
 
-  .media-max-md({ [data-columns-md="@{i}"] { & > * { .width(@i) } } });
-  .media-max-sm({ [data-columns-sm="@{i}"] { & > * { .width(@i) } } });
-  .media-max-xs({ [data-columns-xs="@{i}"] { & > * { .width(@i) } } });
+  .media-max-md({
+    [data-columns-md="@{i}"] {
+      & > * { .width(@i); }
+      .for-span (@j) when (@j > 0) {
+        & > [data-column-span-md="@{j}"] { .width(@i/@j); }
+        .for-span(@j - 1);
+      }
+     .for-span(@i - 1);
+    }
+    [data-columns-md="@{i}"] > [data-column-span-md="@{i}"] {
+      width: 100%;
+    }
+  });
+
+  .media-max-sm({
+    [data-columns-sm="@{i}"] {
+      & > * { .width(@i); }
+      .for-span (@j) when (@j > 0) {
+        & > [data-column-span-sm="@{j}"] { .width(@i/@j); }
+        .for-span(@j - 1);
+      }
+     .for-span(@i - 1);
+    }
+    [data-columns-sm="@{i}"] > [data-column-span-sm="@{i}"] {
+      width: 100%;
+    }
+  });
+
+  .media-max-xs({
+    [data-columns-xs="@{i}"] {
+      & > * { .width(@i); }
+      .for-span (@j) when (@j > 0) {
+        & > [data-column-span-xs="@{j}"] { .width(@i/@j); }
+        .for-span(@j - 1);
+      }
+     .for-span(@i - 1);
+    }
+    [data-columns-xs="@{i}"] > [data-column-span-xs="@{i}"] {
+      width: 100%;
+    }
+  });
 
   .for(@i - 1);
 }
@@ -64,6 +102,15 @@ body {
 
 // hide columns
 [data-columns="0"] { display: none }
-.media-max-md({ [data-columns-md="0"] { display: none } });
-.media-max-sm({ [data-columns-sm="0"] { display: none } });
-.media-max-xs({ [data-columns-xs="0"] { display: none } });
+.media-max-md({
+  [data-columns-md="0"],
+  [data-columns-span-md="0"] { display: none }
+});
+.media-max-sm({
+  [data-columns-sm="0"],
+  [data-columns-span-sm="0"] { display: none }
+});
+.media-max-xs({
+  [data-columns-xs="0"],
+  [data-columns-span-xs="0"] { display: none }
+});
