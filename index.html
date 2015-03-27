@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../theme_telefonica/css/components.telefonica.css">
 
     <style>
-      header[data-columns] { padding-top: 30px; }
       h1 {
         margin-top: 0;
         background: none !important;
@@ -41,14 +40,16 @@
         padding: 57px;
       }
 
+/*
       ul + h2 {
         margin-top: 50px;
       }
+*/
     </style>
   </head>
   <body>
     <div class="tef-content">
-      <header data-columns="2" data-columns-xs="1">
+      <header>
         <h1>Responsive grid system</h1>
       </header>
 
@@ -88,22 +89,15 @@
       <ul data-columns="12" class="tef-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li>
       </ul>
-      <code>
-        <style>
-      <ul data-columns="12" class="tef-gutter">
-        <li>1</li>
-        <li>2</li>
-        ...
-        <li>11</li>
-        <li>12</li>
-      </ul>
-        </style>
-      </code>
 
       <h2>12 to 1</h2>
       <ul data-columns="12">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li>
       </ul>
+      <ul data-columns="11">
+        <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li>
+      </ul>
+      <h2>12 to 1</h2>
       <ul data-columns="11">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li>
       </ul>
