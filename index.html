@@ -328,6 +328,68 @@
       </div>
         </style>
       </code>
+
+      <h2>Column offset <small>(move columns to the right)</small></h2>
+      <ul data-columns="4">
+        <li><span>No offset</span></li>
+        <li data-column-offset="1"><span>1 column offset</span></li>
+        <li><span>No offset</span></li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="1"><span>1 column offset</span></li>
+        <li data-column-offset="1"><span>1 column offset</span></li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="2"><span>2 columns offset</span></li>
+        <li><span>No offset</span></li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="3"><span>3 columns offset</span></li>
+      </ul>
+      <code>
+        <style>
+      <ul data-columns="4">
+        <li>No offset</li>
+        <li data-column-offset="1">1 column offset</li>
+        <li>No offset</li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="1">1 column offset</li>
+        <li data-column-offset="1">1 column offset</li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="2">2 columna offset</li>
+        <li>No offset</li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="3">3 columns offset</li>
+      </ul>
+        </style>
+      </code>
+
+      <p><strong>Example:</strong> Centered content effect uisng column offset.</p>
+      <ul data-columns="4">
+        <li data-column-offset="1" data-column-span="2"><span>1 column offset</span></li>
+      </ul>
+      <code>
+        <style>
+      <ul data-columns="4">
+        <li data-column-offset="1" data-column-span="2">1 column offset</li>
+      </ul>
+        </style>
+      </code>
+
+      <h2>Responsive column offset</h2>
+      <ul data-columns="6" data-columns-md="4" data-columns-sm="3" data-columns-xs="1">
+        <li data-column-offset="1" data-column-offset-md="2" data-column-offset-sm="1" data-column-offset-xs="0"><span>Responsive offset</span></li>
+      </ul>
+      <code>
+        <style>
+      <ul data-columns="6" data-columns-md="4" data-columns-sm="3" data-columns-xs="1">
+        <li data-column-offset="1" data-column-offset-md="2" data-column-offset-sm="1" data-column-offset-xs="0">Responsive offset</li>
+      </ul>
+        </style>
+      </code>
     </div>
   </body>
 </html>
