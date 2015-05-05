@@ -9,14 +9,14 @@ body {
   min-width: @widthMin;
 }
 
-.tef-wrapper {
+.tc-wrapper {
   display: block;
   margin: 0 auto;
 
   .media-min-lg({ width: @widthLG; });
 }
 
-.tef-content {
+.tc-content {
   box-sizing: border-box;
   padding: 20px 16px;
   .media-min-xs({ padding: 20px 32px; });
@@ -35,7 +35,7 @@ body {
     transition: width 0.2s ease;
   }
 
-  &.tef-gutter {
+  &.tc-gutter {
     margin: 0 -@columnGutter;
     & > * { padding: 0 @columnGutter; }
   }
