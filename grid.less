@@ -1,8 +1,6 @@
 //
-// TEF components - grid
+// TEF components - dropdowns
 //
-
-@import "../../utils/less/mixins.less";
 
 body {
   margin: 0;
@@ -24,9 +22,6 @@ body {
 
 [columns] {
   display: block;
-  margin: 0;
-  padding: 0;
-  list-style: none;
   .clearfix();
 
   & > * {
@@ -41,8 +36,44 @@ body {
   }
 }
 
-@columns: 12;
+ul[columns] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// gutters
+.tc-gutter-left { padding-left: @columnGutter; }
+.tc-gutter-right { padding-right: @columnGutter; }
+
+[columns~="1"] > .tc-gutter-left,
+[columns~="1"] > .tc-gutter-right {
+  padding-left: 0; padding-right: 0;
+}
+
+.media-max-md({
+  [columns~="md1"] > .tc-gutter-left,
+  [columns~="md1"] > .tc-gutter-right {
+    padding-left: 0; padding-right: 0;
+  }
+});
+
+.media-max-sm({
+  [columns~="sm1"] > .tc-gutter-left,
+  [columns~="sm1"] > .tc-gutter-right {
+    padding-left: 0; padding-right: 0;
+  }
+});
+
+.media-max-xs({
+  [columns~="xs1"] > .tc-gutter-left,
+  [columns~="xs1"] > .tc-gutter-right {
+    padding-left: 0; padding-right: 0;
+  }
+});
+
 // for loop to generate all column widths (w/o gutter)
+@columns: 6;
 .for (@i) when (@i > 0) {
   [columns~="@{i}"] {
     & > * { .width(@i); }
@@ -53,35 +84,39 @@ body {
     }
     .for-span(@i - 1);
   }
+  .for(@i - 1);
+}
 
-  // media queries
+// media queries
+@columnsMd: 6;
+.for-md (@i) when (@i > 0) {
   .media-max-md({
     [columns~="md@{i}"] {
       & > * { .width(@i); }
-      .for-span (@j) when (@j > 0) {
+      .for-span-md (@j) when (@j > 0) {
         & > [column-span~="md@{j}"] { .width(@i/@j); }
         & > [column-offset~="md@{j}"] { .margin(@i/@j); }
-        .for-span(@j - 1);
+        .for-span-md(@j - 1);
       }
-     .for-span(@i - 1);
+     .for-span-md(@i - 1);
     }
-    [columns~="md@{i}"] > [column-span~="md@{i}"] {
-      width: 100%;
-    }
-    [columns~="md@{i}"] > [column-offset~="md0"] {
-      margin-left: 0;
-    }
+    [columns~="md@{i}"] > [column-span~="md@{i}"] { width: 100%; }
+    [columns~="md@{i}"] > [column-offset~="md0"] { margin-left: 0; }
   });
+  .for-md(@i - 1);
+}
 
+@columnsSm: 6;
+.for-sm (@i) when (@i > 0) {
   .media-max-sm({
     [columns~="sm@{i}"] {
       & > * { .width(@i); }
-      .for-span (@j) when (@j > 0) {
+      .for-span-sm (@j) when (@j > 0) {
         & > [column-span~="sm@{j}"] { .width(@i/@j); }
         & > [column-offset~="sm@{j}"] { .margin(@i/@j); }
-        .for-span(@j - 1);
+        .for-span-sm(@j - 1);
       }
-     .for-span(@i - 1);
+     .for-span-sm(@i - 1);
     }
     [columns~="sm@{i}"] > [column-span~="sm@{i}"] {
       width: 100%;
@@ -90,16 +125,20 @@ body {
       margin-left: 0;
     }
   });
+  .for-sm(@i - 1);
+}
 
+@columnsXs: 6;
+.for-xs (@i) when (@i > 0) {
   .media-max-xs({
     [columns~="xs@{i}"] {
       & > * { .width(@i); }
-      .for-span (@j) when (@j > 0) {
+      .for-span-xs (@j) when (@j > 0) {
         & > [column-span~="xs@{j}"] { .width(@i/@j); }
         & > [column-offset~="xs@{j}"] { .margin(@i/@j); }
-        .for-span(@j - 1);
+        .for-span-xs(@j - 1);
       }
-     .for-span(@i - 1);
+     .for-span-xs(@i - 1);
     }
     [columns~="xs@{i}"] > [column-span~="xs@{i}"] {
       width: 100%;
@@ -108,10 +147,13 @@ body {
       margin-left: 0;
     }
   });
-
-  .for(@i - 1);
+  .for-xs(@i - 1);
 }
+
 .for(@columns);
+.for-md(@columnsMd);
+.for-sm(@columnsSm);
+.for-xs(@columnsXs);
 
 .width(@width) { width: 100% / @width; }
 .margin(@width) { margin-left: 100% / @width; }
