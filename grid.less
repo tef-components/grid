@@ -84,6 +84,7 @@ ul[columns] {
     }
     .for-span(@i - 1);
   }
+  [columns~="@{i}"] > [column-span~="@{i}"] { width: 100%; }
   .for(@i - 1);
 }
 
