@@ -29,14 +29,14 @@
         overflow-y: auto;
         border-radius: 4px;
       }
-      [columns] > * span {
+      [data-columns] > * span {
         display: block;
         background: rgba(0,0,0,.1);
         text-align: center;
         padding: 20px 0;
         margin: 8px 1px;
       }
-      [columns].double > * span {
+      [data-columns].double > * span {
         padding: 57px;
       }
 
@@ -53,13 +53,13 @@
         <h1>Responsive grid system</h1>
       </header>
 
-      <h2>12 columns (list)</h2>
-      <ul columns="12">
+      <h2>12 data-columns (list)</h2>
+      <ul data-columns="12">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li>
       </ul>
       <code>
         <style>
-      <ul columns="12">
+      <ul data-columns="12">
         <li>1</li>
         <li>2</li>
         ...
@@ -69,13 +69,13 @@
         </style>
       </code>
 
-      <h2>12 columns (div)</h2>
-      <div columns="12">
+      <h2>12 data-columns (div)</h2>
+      <div data-columns="12">
         <div><span>1</span></div><div><span>2</span></div><div><span>3</span></div><div><span>4</span></div><div><span>5</span></div><div><span>6</span></div><div><span>7</span></div><div><span>8</span></div><div><span>9</span></div><div><span>10</span></div><div><span>11</span></div><div><span>12</span></div>
       </div>
       <code>
         <style>
-      <div columns="12">
+      <div data-columns="12">
         <div>1</div>
         <div>2</div>
         ...
@@ -85,13 +85,13 @@
         </style>
       </code>
 
-      <h2>12 columns with gutter</h2>
-      <ul columns="12" class="tc-gutter">
+      <h2>12 data-columns with gutter</h2>
+      <ul data-columns="12" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li>
       </ul>
       <code>
         <style>
-      <ul columns="12" class="tc-gutter">
+      <ul data-columns="12" class="tc-gutter">
         <li>1</li>
         <li>2</li>
         ...
@@ -102,96 +102,96 @@
       </code>
 
       <h2>12 to 1</h2>
-      <ul columns="12">
+      <ul data-columns="12">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li>
       </ul>
-      <ul columns="11">
+      <ul data-columns="11">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li>
       </ul>
-      <ul columns="10">
+      <ul data-columns="10">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li>
       </ul>
-      <ul columns="9">
+      <ul data-columns="9">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li>
       </ul>
-      <ul columns="8">
+      <ul data-columns="8">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li>
       </ul>
-      <ul columns="7">
+      <ul data-columns="7">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li>
       </ul>
-      <ul columns="6">
+      <ul data-columns="6">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li>
       </ul>
-      <ul columns="5">
+      <ul data-columns="5">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li>
       </ul>
-      <ul columns="4">
+      <ul data-columns="4">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li>
       </ul>
-      <ul columns="3">
+      <ul data-columns="3">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li>
       </ul>
-      <ul columns="2">
+      <ul data-columns="2">
         <li><span>1</span></li><li><span>2</span></li>
       </ul>
-      <ul columns="1">
+      <ul data-columns="1">
         <li><span>1</span></li>
       </ul>
 
       <h2>12 to 1 with gutter</h2>
-      <ul columns="12" class="tc-gutter">
+      <ul data-columns="12" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li>
       </ul>
-      <ul columns="11" class="tc-gutter">
+      <ul data-columns="11" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li>
       </ul>
-      <ul columns="10" class="tc-gutter">
+      <ul data-columns="10" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li>
       </ul>
-      <ul columns="9" class="tc-gutter">
+      <ul data-columns="9" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li>
       </ul>
-      <ul columns="8" class="tc-gutter">
+      <ul data-columns="8" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li>
       </ul>
-      <ul columns="7" class="tc-gutter">
+      <ul data-columns="7" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li>
       </ul>
-      <ul columns="6" class="tc-gutter">
+      <ul data-columns="6" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li>
       </ul>
-      <ul columns="5" class="tc-gutter">
+      <ul data-columns="5" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li>
       </ul>
-      <ul columns="4" class="tc-gutter">
+      <ul data-columns="4" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li>
       </ul>
-      <ul columns="3" class="tc-gutter">
+      <ul data-columns="3" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li>
       </ul>
-      <ul columns="2" class="tc-gutter">
+      <ul data-columns="2" class="tc-gutter">
         <li><span>1</span></li><li><span>2</span></li>
       </ul>
-      <ul columns="1" class="tc-gutter">
+      <ul data-columns="1" class="tc-gutter">
         <li><span>1</span></li>
       </ul>
 
-      <h2>12 columns responsive</h2>
+      <h2>12 data-columns responsive</h2>
       <p>Example:</p>
       <ul>
-        <li>Desktop (default):<strong> 12 columns</strong></li>
-        <li>Tablet landscape (md):<strong> 4 columns</strong></li>
-        <li>Tablet portrait / Mobile landscape (sm):<strong> 2 columns</strong></li>
-        <li>Mobile portrait (xs):<strong> 1 column</strong></li>
+        <li>Desktop (default):<strong> 12 data-columns</strong></li>
+        <li>Tablet landscape (md):<strong> 4 data-columns</strong></li>
+        <li>Tablet portrait / Mobile landscape (sm):<strong> 2 data-columns</strong></li>
+        <li>Mobile portrait (xs):<strong> 1 data-column</strong></li>
       </ul>
-      <p><strong>Note:</strong> Setting columns to 0, md0, sm0 or xs0 will hide the column for that breakpoint.</p>
-      <ul columns="12 md4 sm2 xs1" class="tc-gutter">
+      <p><strong>Note:</strong> Setting data-columns to 0, md0, sm0 or xs0 will hide the data-column for that breakpoint.</p>
+      <ul data-columns="12 md4 sm2 xs1" class="tc-gutter">
           <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li>
       </ul>
       <code>
         <style>
-      <ul columns="12 md4 sm2 xs1" class="tc-gutter">
+      <ul data-columns="12 md4 sm2 xs1" class="tc-gutter">
         <li>1</li>
         <li>2</li>
         ...
@@ -201,69 +201,69 @@
         </style>
       </code>
 
-      <h2>Column span <small>(how many columns an element should span across)</small></h2>
+      <h2>data-column span <small>(how many data-columns an element should span across)</small></h2>
       <p><strong>Example 1:</strong> 12 colums, 2 for each side panel and 8 for content.</p>
-      <ul columns="12" class="tc-gutter">
-        <li column-span="2"><span>2 columns</span></li>
-        <li column-span="8"><span>8 columns</span></li>
-        <li column-span="2"><span>2 columns</span></li>
+      <ul data-columns="12" class="tc-gutter">
+        <li data-column-span="2"><span>2 data-columns</span></li>
+        <li data-column-span="8"><span>8 data-columns</span></li>
+        <li data-column-span="2"><span>2 data-columns</span></li>
       </ul>
       <code>
         <style>
-      <ul columns="12">
-        <li column-span="2">2 columns</li>
-        <li column-span="8">8 columns</li>
-        <li column-span="2">2 columns</li>
+      <ul data-columns="12">
+        <li data-column-span="2">2 data-columns</li>
+        <li data-column-span="8">8 data-columns</li>
+        <li data-column-span="2">2 data-columns</li>
       </ul>
         </style>
       </code>
 
-      <p><strong>Example 2:</strong> 3 colums for conrtent and a side menu of 2 columns</p>
-      <ul columns="5" class="tc-gutter">
+      <p><strong>Example 2:</strong> 3 colums for conrtent and a side menu of 2 data-columns</p>
+      <ul data-columns="5" class="tc-gutter">
         <li><span>1</span></li>
         <li><span>2</span></li>
         <li><span>3</span></li>
-        <li column-span="2"><span>Menu</span></li>
+        <li data-column-span="2"><span>Menu</span></li>
       </ul>
       <code>
         <style>
-      <ul columns="5" class="tc-gutter">
+      <ul data-columns="5" class="tc-gutter">
         <li>1</li>
         <li>2</li>
         <li>3</li>
-        <li column-span="2">Menu</li>
+        <li data-column-span="2">Menu</li>
       </ul>
         </style>
       </code>
 
       <h2>Nested grids</h2>
-      <p>Nested grids will be useful in case you need to split content inside a column.</p>
-      <div columns="5" class="tc-gutter">
-        <section column-span="3">
-          <ul columns="3" class="tc-gutter double">
+      <p>Nested grids will be useful in case you need to split content inside a data-column.</p>
+      <div data-columns="5" class="tc-gutter">
+        <section data-column-span="3">
+          <ul data-columns="3" class="tc-gutter double">
             <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li>
           </ul>
         </section>
-        <nav column-span="2">
+        <nav data-column-span="2">
           <header><span>Menu header</span></header>
-          <ul columns="2" class="tc-gutter">
+          <ul data-columns="2" class="tc-gutter">
             <li><span>1</span></li><li><span>2</span></li>
           </ul>
         </nav>
       </div>
       <code>
         <style>
-      <div columns="5" class="tc-gutter">
-        <section column-span="3">
-          <ul columns="3" class="tc-gutter">
+      <div data-columns="5" class="tc-gutter">
+        <section data-column-span="3">
+          <ul data-columns="3" class="tc-gutter">
             <li>1</li>
             <li>2</li>
             <li>3</li>
           </ul>
         </section>
-        <nav column-span="2">
+        <nav data-column-span="2">
           <header>Menu header</header>
-          <ul columns="2" class="tc-gutter">
+          <ul data-columns="2" class="tc-gutter">
             <li>1</li>
             <li>2</li>
           </ul>
@@ -276,58 +276,58 @@
       <p>Same code as before, this time responsive:</p>
       <ul>
         <li>
-          Desktop (default): <strong>5 columns</strong>
+          Desktop (default): <strong>5 data-columns</strong>
           <ul>
-            <li>Content: <strong>3 columns</strong></li>
-            <li>Menu: <strong>2 columns</strong> (content: 2 columns)</li>
+            <li>Content: <strong>3 data-columns</strong></li>
+            <li>Menu: <strong>2 data-columns</strong> (content: 2 data-columns)</li>
           </ul>
         </li>
         <li>
           Tablet landscape (md):
           <ul>
-            <li>Menu: <strong>2 columns</strong> (content: 1 column)</li>
+            <li>Menu: <strong>2 data-columns</strong> (content: 1 data-column)</li>
           </ul>
         </li>
         <li>
-          Tablet portrait / Mobile landscape (sm): <strong>2 columns</strong>
+          Tablet portrait / Mobile landscape (sm): <strong>2 data-columns</strong>
           <ul>
-            <li>Content: <strong>1 column</strong></li>
-            <li>Menu: <strong>1 columns</strong></li>
+            <li>Content: <strong>1 data-column</strong></li>
+            <li>Menu: <strong>1 data-columns</strong></li>
           </ul>
         </li>
         <li>
-          Mobile portrait (xs): <strong>1 column</strong>
+          Mobile portrait (xs): <strong>1 data-column</strong>
           <ul>
-            <li>Content: <strong>1 column</strong></li>
+            <li>Content: <strong>1 data-column</strong></li>
             <li>Menu: <strong>Removed</strong></li>
           </ul>
       </ul>
-      <div columns="5 sm2 xs1" class="tc-gutter">
-        <section column-span="3 sm1 xs1">
-          <ul columns="3 sm1" class="tc-gutter double">
+      <div data-columns="5 sm2 xs1" class="tc-gutter">
+        <section data-column-span="3 sm1 xs1">
+          <ul data-columns="3 sm1" class="tc-gutter double">
             <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li>
           </ul>
         </section>
-        <nav column-span="2 sm1 xs0">
+        <nav data-column-span="2 sm1 xs0">
           <header><span>Menu header</span></header>
-          <ul columns="2 md1" class="tc-gutter">
+          <ul data-columns="2 md1" class="tc-gutter">
             <li><span>1</span></li><li><span>2</span></li>
           </ul>
         </nav>
       </div>
       <code>
         <style>
-      <div columns="5 sm2 xs1" class="tc-gutter">
-        <section column-span="3 sm1 xs1">
-          <ul columns="3 sm1" class="tc-gutter">
+      <div data-columns="5 sm2 xs1" class="tc-gutter">
+        <section data-column-span="3 sm1 xs1">
+          <ul data-columns="3 sm1" class="tc-gutter">
             <li>1</li>
             <li>2</li>
             <li>3</li>
           </ul>
         </section>
-        <nav column-span="2 sm1 xs0">
+        <nav data-column-span="2 sm1 xs0">
           <header>Menu header</header>
-          <ul columns="2 md1" class="tc-gutter">
+          <ul data-columns="2 md1" class="tc-gutter">
             <li>1</li>
             <li>2</li>
           </ul>
@@ -336,64 +336,64 @@
         </style>
       </code>
 
-      <h2>Column offset <small>(move columns to the right)</small></h2>
-      <ul columns="4">
+      <h2>data-column offset <small>(move data-columns to the right)</small></h2>
+      <ul data-columns="4">
         <li><span>No offset</span></li>
-        <li column-offset="1"><span>1 column offset</span></li>
-        <li><span>No offset</span></li>
-      </ul>
-      <ul columns="4">
-        <li column-offset="1"><span>1 column offset</span></li>
-        <li column-offset="1"><span>1 column offset</span></li>
-      </ul>
-      <ul columns="4">
-        <li column-offset="2"><span>2 columns offset</span></li>
+        <li data-column-offset="1"><span>1 data-column offset</span></li>
         <li><span>No offset</span></li>
       </ul>
-      <ul columns="4">
-        <li column-offset="3"><span>3 columns offset</span></li>
+      <ul data-columns="4">
+        <li data-column-offset="1"><span>1 data-column offset</span></li>
+        <li data-column-offset="1"><span>1 data-column offset</span></li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="2"><span>2 data-columns offset</span></li>
+        <li><span>No offset</span></li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="3"><span>3 data-columns offset</span></li>
       </ul>
       <code>
         <style>
-      <ul columns="4">
+      <ul data-columns="4">
         <li>No offset</li>
-        <li column-offset="1">1 column offset</li>
-        <li>No offset</li>
-      </ul>
-      <ul columns="4">
-        <li column-offset="1">1 column offset</li>
-        <li column-offset="1">1 column offset</li>
-      </ul>
-      <ul columns="4">
-        <li column-offset="2">2 columna offset</li>
+        <li data-column-offset="1">1 data-column offset</li>
         <li>No offset</li>
       </ul>
-      <ul columns="4">
-        <li column-offset="3">3 columns offset</li>
+      <ul data-columns="4">
+        <li data-column-offset="1">1 data-column offset</li>
+        <li data-column-offset="1">1 data-column offset</li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="2">2 data-columna offset</li>
+        <li>No offset</li>
+      </ul>
+      <ul data-columns="4">
+        <li data-column-offset="3">3 data-columns offset</li>
       </ul>
         </style>
       </code>
 
-      <p><strong>Example:</strong> Centered content effect uisng column offset.</p>
-      <ul columns="4">
-        <li column-offset="1" column-span="2"><span>1 column offset</span></li>
+      <p><strong>Example:</strong> Centered content effect uisng data-column offset.</p>
+      <ul data-columns="4">
+        <li data-column-offset="1" data-column-span="2"><span>1 data-column offset</span></li>
       </ul>
       <code>
         <style>
-      <ul columns="4">
-        <li column-offset="1" column-span="2">1 column offset</li>
+      <ul data-columns="4">
+        <li data-column-offset="1" data-column-span="2">1 data-column offset</li>
       </ul>
         </style>
       </code>
 
-      <h2>Responsive column offset</h2>
-      <ul columns="6 md4 sm3 xs1">
-        <li column-offset="1 md2 sm1 xs0"><span>Responsive offset</span></li>
+      <h2>Responsive data-column offset</h2>
+      <ul data-columns="6 md4 sm3 xs1">
+        <li data-column-offset="1 md2 sm1 xs0"><span>Responsive offset</span></li>
       </ul>
       <code>
         <style>
-      <ul columns="6 md4 sm3 xs1">
-        <li column-offset="1 md2 sm1 xs0">Responsive offset</li>
+      <ul data-columns="6 md4 sm3 xs1">
+        <li data-column-offset="1 md2 sm1 xs0">Responsive offset</li>
       </ul>
         </style>
       </code>
