@@ -31,8 +31,8 @@ body {
   }
 
   &.tc-gutter {
-    margin: 0 -@data-columnGutter;
-    & > * { padding: 0 @data-columnGutter; }
+    margin: 0 -@columnGutter;
+    & > * { padding: 0 @columnGutter; }
   }
 }
 
@@ -43,8 +43,8 @@ ul[data-columns] {
 }
 
 // gutters
-.tc-gutter-left { padding-left: @data-columnGutter; }
-.tc-gutter-right { padding-right: @data-columnGutter; }
+.tc-gutter-left { padding-left: @columnGutter; }
+.tc-gutter-right { padding-right: @columnGutter; }
 
 [data-columns~="1"] > .tc-gutter-left,
 [data-columns~="1"] > .tc-gutter-right {
@@ -73,7 +73,7 @@ ul[data-columns] {
 });
 
 // for loop to generate all data-column widths (w/o gutter)
-@data-columns: 6;
+@columns: 6;
 .for (@i) when (@i > 0) {
   [data-columns~="@{i}"] {
     & > * { .width(@i); }
@@ -89,7 +89,7 @@ ul[data-columns] {
 }
 
 // media queries
-@data-columnsMd: 6;
+@columnsMd: 6;
 .for-md (@i) when (@i > 0) {
   .media-max-md({
     [data-columns~="md@{i}"] {
@@ -107,7 +107,7 @@ ul[data-columns] {
   .for-md(@i - 1);
 }
 
-@data-columnsSm: 6;
+@columnsSm: 6;
 .for-sm (@i) when (@i > 0) {
   .media-max-sm({
     [data-columns~="sm@{i}"] {
@@ -129,7 +129,7 @@ ul[data-columns] {
   .for-sm(@i - 1);
 }
 
-@data-columnsXs: 6;
+@columnsXs: 6;
 .for-xs (@i) when (@i > 0) {
   .media-max-xs({
     [data-columns~="xs@{i}"] {
@@ -151,10 +151,10 @@ ul[data-columns] {
   .for-xs(@i - 1);
 }
 
-.for(@data-columns);
-.for-md(@data-columnsMd);
-.for-sm(@data-columnsSm);
-.for-xs(@data-columnsXs);
+.for(@columns);
+.for-md(@columnsMd);
+.for-sm(@columnsSm);
+.for-xs(@columnsXs);
 
 .width(@width) { width: 100% / @width; }
 .margin(@width) { margin-left: 100% / @width; }
