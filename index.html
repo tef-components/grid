@@ -149,12 +149,12 @@
       <h2>6 columns responsive</h2>
       <p>Example:</p>
       <ul>
-        <li>Desktop (default):<strong> 6 data-columns</strong></li>
-        <li>Tablet landscape (md):<strong> 4 data-columns</strong></li>
-        <li>Tablet portrait / Mobile landscape (sm):<strong> 2 data-columns</strong></li>
-        <li>Mobile portrait (xs):<strong> 1 data-column</strong></li>
+        <li>Desktop (default):<strong> 6 columns</strong></li>
+        <li>Tablet landscape (md):<strong> 4 columns</strong></li>
+        <li>Tablet portrait / Mobile landscape (sm):<strong> 2 columns</strong></li>
+        <li>Mobile portrait (xs):<strong> 1 column</strong></li>
       </ul>
-      <p><strong>Note:</strong> Setting data-columns to 0, md0, sm0 or xs0 will hide the data-column for that breakpoint.</p>
+      <p><strong>Note:</strong> Setting data-columns to 0, md0, sm0 or xs0 will hide the column for that breakpoint.</p>
       <ul data-columns="6 md4 sm2 xs1" class="tc-gutter">
           <li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li><li><span>12</span></li>
       </ul>
@@ -170,24 +170,24 @@
         </style>
       </code>
 
-      <h2>data-column span <small>(how many data-columns an element should span across)</small></h2>
-      <p><strong>Example 1:</strong> 6 colums, 2 for each side panel and 8 for content.</p>
+      <h2>column span <small>(how many data-columns an element should span across)</small></h2>
+      <p><strong>Example 1:</strong> 6 colums, 1 for each side panel and 4 for content.</p>
       <ul data-columns="6" class="tc-gutter">
-        <li data-column-span="1"><span>1 data-columns</span></li>
-        <li data-column-span="4"><span>4 data-columns</span></li>
-        <li data-column-span="1"><span>1 data-columns</span></li>
+        <li data-column-span="1"><span>1 column</span></li>
+        <li data-column-span="4"><span>4 columns</span></li>
+        <li data-column-span="1"><span>1 column</span></li>
       </ul>
       <code>
         <style>
       <ul data-columns="6">
-        <li data-column-span="1">1 data-columns</li>
-        <li data-column-span="4">4 data-columns</li>
-        <li data-column-span="1">1 data-columns</li>
+        <li data-column-span="1">1 column</li>
+        <li data-column-span="4">4 columns</li>
+        <li data-column-span="1">1 column</li>
       </ul>
         </style>
       </code>
 
-      <p><strong>Example 2:</strong> 3 colums for conrtent and a side menu of 2 data-columns</p>
+      <p><strong>Example 2:</strong> 3 colums for content and a side menu of 2 columns</p>
       <ul data-columns="5" class="tc-gutter">
         <li><span>1</span></li>
         <li><span>2</span></li>
@@ -245,29 +245,29 @@
       <p>Same code as before, this time responsive:</p>
       <ul>
         <li>
-          Desktop (default): <strong>5 data-columns</strong>
+          Desktop (default): <strong>5 columns</strong>
           <ul>
-            <li>Content: <strong>3 data-columns</strong></li>
-            <li>Menu: <strong>2 data-columns</strong> (content: 2 data-columns)</li>
+            <li>Content: <strong>3 columns</strong></li>
+            <li>Menu: <strong>2 columns</strong> (content: 2 columns)</li>
           </ul>
         </li>
         <li>
           Tablet landscape (md):
           <ul>
-            <li>Menu: <strong>2 data-columns</strong> (content: 1 data-column)</li>
+            <li>Menu: <strong>2 columns</strong> (content: 1 column)</li>
           </ul>
         </li>
         <li>
-          Tablet portrait / Mobile landscape (sm): <strong>2 data-columns</strong>
+          Tablet portrait / Mobile landscape (sm): <strong>2 columns</strong>
           <ul>
-            <li>Content: <strong>1 data-column</strong></li>
-            <li>Menu: <strong>1 data-columns</strong></li>
+            <li>Content: <strong>1 column</strong></li>
+            <li>Menu: <strong>1 columns</strong></li>
           </ul>
         </li>
         <li>
-          Mobile portrait (xs): <strong>1 data-column</strong>
+          Mobile portrait (xs): <strong>1 column</strong>
           <ul>
-            <li>Content: <strong>1 data-column</strong></li>
+            <li>Content: <strong>1 column</strong></li>
             <li>Menu: <strong>Removed</strong></li>
           </ul>
       </ul>
@@ -305,15 +305,15 @@
         </style>
       </code>
 
-      <h2>data-column offset <small>(move data-columns to the right)</small></h2>
+      <h2>column offset <small>(move columns to the right)</small></h2>
       <ul data-columns="4">
         <li><span>No offset</span></li>
-        <li data-column-offset="1"><span>1 data-column offset</span></li>
+        <li data-column-offset="1"><span>1 column offset</span></li>
         <li><span>No offset</span></li>
       </ul>
       <ul data-columns="4">
-        <li data-column-offset="1"><span>1 data-column offset</span></li>
-        <li data-column-offset="1"><span>1 data-column offset</span></li>
+        <li data-column-offset="1"><span>1 column offset</span></li>
+        <li data-column-offset="1"><span>1 column offset</span></li>
       </ul>
       <ul data-columns="4">
         <li data-column-offset="2"><span>2 data-columns offset</span></li>
@@ -326,12 +326,12 @@
         <style>
       <ul data-columns="4">
         <li>No offset</li>
-        <li data-column-offset="1">1 data-column offset</li>
+        <li data-column-offset="1">1 column offset</li>
         <li>No offset</li>
       </ul>
       <ul data-columns="4">
-        <li data-column-offset="1">1 data-column offset</li>
-        <li data-column-offset="1">1 data-column offset</li>
+        <li data-column-offset="1">1 column offset</li>
+        <li data-column-offset="1">1 column offset</li>
       </ul>
       <ul data-columns="4">
         <li data-column-offset="2">2 data-columna offset</li>
@@ -343,19 +343,19 @@
         </style>
       </code>
 
-      <p><strong>Example:</strong> Centered content effect uisng data-column offset.</p>
+      <p><strong>Example:</strong> Centered content effect uisng column offset.</p>
       <ul data-columns="4">
-        <li data-column-offset="1" data-column-span="2"><span>1 data-column offset</span></li>
+        <li data-column-offset="1" data-column-span="2"><span>1 column offset</span></li>
       </ul>
       <code>
         <style>
       <ul data-columns="4">
-        <li data-column-offset="1" data-column-span="2">1 data-column offset</li>
+        <li data-column-offset="1" data-column-span="2">1 column offset</li>
       </ul>
         </style>
       </code>
 
-      <h2>Responsive data-column offset</h2>
+      <h2>Responsive column offset</h2>
       <ul data-columns="6 md4 sm3 xs1">
         <li data-column-offset="1 md2 sm1 xs0"><span>Responsive offset</span></li>
       </ul>
